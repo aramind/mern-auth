@@ -1,0 +1,20 @@
+.header {
+  height: 80px;
+  background-color: slategray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2rem;
+}
+
+.header__logo {
+  font-size: 2rem;
+}
+
+.header__navlinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  font-size: 1.5rem;
+}

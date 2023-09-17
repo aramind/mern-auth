@@ -5,10 +5,12 @@ import About from "./pages/About";
 import Signin from "./pages/Signin";
 import SIgnup from "./pages/SIgnup";
 import Profile from "./pages/Profile";
+import Header from "./components/header/Header";
 
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route
           path="/"
