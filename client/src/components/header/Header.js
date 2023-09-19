@@ -7,13 +7,22 @@ const Header = () => {
     <div className="header">
       <div className="header__logo">Auth App</div>
       <ul className="header__navlinks">
-        <NavLink to="/">
+        <NavLink
+          to="/"
+          className="navlink"
+        >
           <li>Home</li>
         </NavLink>
-        <NavLink to="/about">
+        <NavLink
+          to="/about"
+          className="navlink"
+        >
           <li>About</li>
         </NavLink>
-        <NavLink to="/sign-in">
+        <NavLink
+          to="/sign-in"
+          className="navlink"
+        >
           <li>Sign In</li>
         </NavLink>
       </ul>

@@ -5,3 +5,16 @@ ul {
 ul a {
   text-decoration: none;
 }
+
+button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.navlink {
+  text-decoration: none;
+}
+
+.navlink:hover {
+  opacity: 0.7;
+}
