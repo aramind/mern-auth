@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./pages.css";
 import axios from "axios";
 
@@ -9,6 +9,8 @@ const Signup = () => {
   const [successMsg, setSuccessMsg] = useState();
   const [hasError, setHasError] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const URL = "http://localhost:3001/api/auth/signup";
   const handleChange = (e) => {
@@ -22,6 +24,7 @@ const Signup = () => {
       const res = await axios.post(URL, formData);
       setLoading(false);
       setSuccessMsg(res.data.message);
+      navigate("/sign-in");
     } catch (error) {
       setLoading(false);
       setHasError(true);
