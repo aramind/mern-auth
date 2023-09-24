@@ -2,15 +2,21 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./pages.css";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  signInFailure,
+  signInStart,
+  signInSuccess,
+} from "../redux/user/userSlice";
 
 const Signin = () => {
   const [formData, setFormData] = useState({});
   const [errorMsg, setErrorMsg] = useState();
   const [successMsg, setSuccessMsg] = useState();
-  const [hasError, setHasError] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const { loading, hasError, error } = useSelector((state) => state.user);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const URL = "http://localhost:3001/api/auth/signin";
   const handleChange = (e) => {
@@ -20,14 +26,14 @@ const Signin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setLoading(true);
+      dispatch(signInStart());
       const res = await axios.post(URL, formData);
-      setLoading(false);
+
       setSuccessMsg(res.data.message);
+      dispatch(signInSuccess(res.data));
       navigate("/");
     } catch (error) {
-      setLoading(false);
-      setHasError(true);
+      dispatch(signInFailure());
       console.log(error.response.data.message);
       setErrorMsg(`Sign up failed, ${error.response.data.message}`);
     }
