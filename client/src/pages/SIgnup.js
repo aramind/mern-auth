@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./pages.css";
 import axios from "axios";
+import OAuth from "../components/OAuth";
 
 const Signup = () => {
   const [formData, setFormData] = useState({});
@@ -72,6 +73,7 @@ const Signup = () => {
         >
           {loading ? "Loading" : "Sign Up"}
         </button>
+        <OAuth />
       </form>
       <div className="sign-up__extras">
         <p>Have an account?</p>
