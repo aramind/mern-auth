@@ -1,8 +1,10 @@
 import React from "react";
 import "./header.css";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const { currentUser } = useSelector((state) => state.user);
   return (
     <div className="header">
       <div className="header__logo">Auth App</div>
@@ -20,10 +22,18 @@ const Header = () => {
           <li>About</li>
         </NavLink>
         <NavLink
-          to="/sign-in"
+          to="/profile"
           className="navlink"
         >
-          <li>Sign In</li>
+          {currentUser ? (
+            <img
+              src={currentUser.profilePicture}
+              alt="profile"
+              className="header__profile-pic"
+            />
+          ) : (
+            <li>Sign In</li>
+          )}
         </NavLink>
       </ul>
     </div>
