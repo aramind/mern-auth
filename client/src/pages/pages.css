@@ -50,3 +50,50 @@
   font-size: 0.8rem;
   margin-top: -0.9rem;
 }
+
+/* PROFILE */
+.profile {
+  text-align: center;
+}
+
+.profile__form {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin-inline: auto;
+
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.profile__picture {
+  height: 100px;
+  width: 100px;
+
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile__input {
+  background-color: rgb(231, 236, 241);
+  border: none;
+  width: 100%;
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+.profile__button {
+  background-color: rgb(71, 92, 117);
+  color: #eee;
+  text-transform: uppercase;
+}
+
+.profile__actions {
+  padding-inline: 5px;
+  color: red;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
