@@ -97,3 +97,19 @@
   display: flex;
   justify-content: space-between;
 }
+
+.image-status {
+  font-size: 0.8rem;
+}
+
+.image-status--error {
+  color: red;
+}
+
+.image-status--success {
+  color: green;
+}
+
+.image-status--percent {
+  color: blue;
+}
