@@ -21,7 +21,9 @@ const authController = {
     }
   },
   signin: async (req, res, next) => {
+    console.log("from signin controller");
     const { email, password } = req.body;
+
     try {
       const validUser = await User.findOne({ email });
 
